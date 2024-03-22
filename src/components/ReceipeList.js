@@ -11,8 +11,9 @@ const ReceipeList = ({ receipe, key }) => {
 
   const handleClick = (label) => {
     console.log(wish);
+    console.log(label);
     if (wish) {
-      dispatch(RemoveFavourite(label));
+      dispatch(RemoveFavourite({ ind: label }));
     } else {
       dispatch(addToFavourite(receipe));
     }

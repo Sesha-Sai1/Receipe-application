@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { act } from "react-dom/test-utils";
 
 const ReceipeSlice = createSlice({
   name: "Receipe",
@@ -9,7 +10,9 @@ const ReceipeSlice = createSlice({
     },
     RemoveFavourite: (state, action) => {
       return state.filter((receipe, index) => {
-        return receipe.label !== action.payload.ind;
+        console.log(action.payload);
+        console.log(receipe.recipe.label);
+        return receipe.recipe.label !== action.payload.ind;
       });
     },
   },
